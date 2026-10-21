@@ -3,64 +3,300 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Thales Macêdo | Software Engineer</title>
+    <meta name="description"
+        content="Thales Macêdo, Software Engineer and Full Stack Developer working with Golang, Java, Python, Angular and AWS. Based in Salvador, Bahia, Brazil.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Thales Macêdo</title>
 </head>
 
 <body>
-    <nav class=" d-flex align-items-center">
-        <ul class="d-flex ">
-            <a href="#"><strong>THALES MACÊDO</strong></a>
-            <a href="#home">HOME</a>
-            <a href="#about">ABOUT</a>
-            <a href="#projects">PROJECTS</a>
-            <a href="#contact">CONTACT</a>
-        </ul>
-    </nav>
-    <session id="home">
-        <video src="/src/videos/nebula-red.m4v" loop autoplay muted></video>
-    </session>
-    <session id="about">
+    <canvas id="sky" aria-hidden="true"></canvas>
+    <div class="nebula" aria-hidden="true"></div>
 
-    </session>
-    <session id="projects">
+    <header class="nav" id="top">
+        <a class="brand" href="#top"><span class="brand-star">✦</span> THALES MACÊDO</a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+            <span></span><span></span><span></span>
+        </button>
+        <nav id="nav-links">
+            <a href="#about">About</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    </session>
-    <session id="contact">
-
-    </session>
-    <footer id="credits d-flex ">
-        <div class="wrap">
-            <p><img src="src/icons/heart.svg" alt="heart"> Made with love by Thales Macêdo</p>
-            <div id="social">
-                <a href="https://www.facebook.com/dev.thalesmacedo1/">
-                    <img src="./src/icons/facebook.svg" alt="facebook">
-                </a>
-                <a href="https://www.instagram.com/thaleesmacedo/">
-                    <img src="./src/icons/instagram.svg" alt="instagram">
-                </a>
-                <a href="https://www.linkedin.com/in/thalesmacedo1/">
-                    <img src="./src/icons/linkedin.svg" alt="linkedin">
-                </a>
-                <a href="https://github.com/thalesmacedo1">
-                    <img src="./src/icons/github.svg" alt="github">
-                </a>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-inner container">
+            <div class="hero-content">
+                <p class="eyebrow">// hello, universe. I'm</p>
+                <h1>Thales Macêdo</h1>
+                <p class="role">Software Engineer · Full Stack Developer</p>
+                <p class="stack">Golang · Java · Python · Angular · NodeJS · AWS</p>
+                <p class="location">Salvador, Bahia, Brazil</p>
+                <div class="cta">
+                    <a class="btn btn-primary" href="#contact">Get in touch</a>
+                    <a class="btn btn-ghost" href="https://github.com/thalesmacedo1" target="_blank"
+                        rel="noopener">View GitHub</a>
+                </div>
             </div>
+            <div class="orbit-system" aria-hidden="true">
+                <div class="sun"></div>
+                <div class="orbit o1"><span class="planet"></span></div>
+                <div class="orbit o2"><span class="planet"></span></div>
+                <div class="orbit o3"><span class="planet ringed"></span></div>
+                <div class="orbit o4"><span class="planet"></span></div>
+            </div>
+            </div>
+            <a class="scroll-hint" href="#about" aria-label="Scroll to About">
+                <span></span>
+            </a>
+        </section>
+
+        <section id="about" class="section container">
+            <h2 class="section-title"><span>01.</span> About me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I'm a software engineer with <strong>5+ years of professional experience</strong> building
+                        backend and full stack systems with Golang, Java, Python and Angular. Most of my work has been
+                        on <strong>REST and gRPC APIs</strong> inside microservices architectures, with a strong focus on
+                        Clean Architecture.</p>
+                    <p>I'm comfortable with DevOps culture and platform engineering. Day to day I work with Docker,
+                        Terraform, Kubernetes and CI/CD tools like GitHub Actions and Jenkins, on AWS and Azure.</p>
+                    <p>I also build with AI: agents like Claude Code and agentic IDEs like Cursor and Antigravity are
+                        part of my workflow. In my free time I study ReactJS and React Native.</p>
+                    <p>I'm currently pursuing a <strong>Master's degree in Computer Science</strong> at Universidade
+                        Federal da Bahia.</p>
+                </div>
+                <aside class="about-facts">
+                    <div class="fact"><span class="fact-num">5+</span><span>years of experience</span></div>
+                    <div class="fact"><span class="fact-num">6</span><span>languages spoken</span></div>
+                    <div class="fact"><span class="fact-num">C2</span><span>English (EF SET 76/100)</span></div>
+                </aside>
+            </div>
+        </section>
+
+        <section id="experience" class="section container">
+            <h2 class="section-title"><span>02.</span> Experience</h2>
+            <ol class="timeline">
+                <li class="job">
+                    <div class="job-head">
+                        <h3>Backend Developer <span class="at">@ Bemobi</span></h3>
+                        <p class="job-meta">Jun 2025 – Present · Rio de Janeiro, Brazil</p>
+                    </div>
+                    <ul>
+                        <li>Develop backend services in Java and Golang within a microservices architecture, focusing on
+                            performance, scalability and maintainability.</li>
+                        <li>Designed, deployed and operated high-throughput Apache Kafka clusters: topic partitioning,
+                            consumer-group tuning and schema governance for reliable real-time event streaming.</li>
+                        <li>Provision and manage AWS infrastructure (EKS, ECS, S3, RDS, Lambda) with Terraform, following
+                            security-first and cost-optimization practices.</li>
+                        <li>Use Python for automation and scripting, and write unit and functional tests to keep
+                            production stable.</li>
+                    </ul>
+                    <div class="tags"><span>Java</span><span>Golang</span><span>Kafka</span><span>AWS</span><span>Terraform</span><span>Python</span></div>
+                </li>
+                <li class="job">
+                    <div class="job-head">
+                        <h3>AI Code Analyst <span class="at">@ Alignerr</span></h3>
+                        <p class="job-meta">Dec 2024 – Jun 2025</p>
+                    </div>
+                    <ul>
+                        <li>Designed and developed AI prompt training modules that improve model responses and overall
+                            performance.</li>
+                        <li>Analyzed and iterated on prompt strategies based on qualitative feedback and quantitative
+                            metrics.</li>
+                        <li>Monitored AI performance metrics and refined models to improve accuracy and the efficiency
+                            of MCPs for AI.</li>
+                    </ul>
+                    <div class="tags"><span>LLMs</span><span>Prompt Engineering</span><span>MCP</span></div>
+                </li>
+                <li class="job">
+                    <div class="job-head">
+                        <h3>Back End Developer <span class="at">@ AtlasIntel</span></h3>
+                        <p class="job-meta">Nov 2024 – Apr 2025 · Rio de Janeiro, Brazil</p>
+                    </div>
+                    <p class="job-intro">Backend for a data and polling intelligence startup, from data processing to
+                        automated report delivery.</p>
+                    <ul>
+                        <li>Built backend applications and automations in TypeScript and Node.js to process, analyze and
+                            report opinion-poll data.</li>
+                        <li>Built and maintained REST APIs and SQL data models on AWS for survey workflows and automated
+                            report generation.</li>
+                        <li>Proposed new products and shipped features in a fast-paced environment, contributing
+                            directly to the roadmap.</li>
+                        <li>Applied TDD with Jest unit tests and Postman API test suites.</li>
+                    </ul>
+                    <div class="tags"><span>TypeScript</span><span>Node.js</span><span>SQL</span><span>AWS</span><span>Jest</span></div>
+                </li>
+                <li class="job">
+                    <div class="job-head">
+                        <h3>Full Stack Developer <span class="at">@ FIT – Instituto de Tecnologia</span></h3>
+                        <p class="job-meta">Oct 2022 – Sep 2024 · Sorocaba, São Paulo, Brazil</p>
+                    </div>
+                    <ul>
+                        <li>Developed Golang backend services within a microservices architecture, including service
+                            communication, orchestration and continuous integration.</li>
+                        <li>Used Python for automation, scripting and API development, and Kivy for cross-platform
+                            mobile apps.</li>
+                        <li>Built user interfaces in Angular integrated with the backend services.</li>
+                        <li>Wrote unit and functional tests and took part in the full development lifecycle.</li>
+                    </ul>
+                    <div class="tags"><span>Golang</span><span>Python</span><span>Kivy</span><span>Angular</span></div>
+                </li>
+                <li class="job">
+                    <div class="job-head">
+                        <h3>Full Stack Developer <span class="at">@ Capgemini</span></h3>
+                        <p class="job-meta">Jul 2021 – Aug 2022 · Salvador, Bahia, Brazil</p>
+                    </div>
+                    <ul>
+                        <li>Developed Golang and Java APIs within a microservices architecture.</li>
+                        <li>Built Angular user interfaces integrated with the backend services.</li>
+                        <li>Maintained and adapted code to Brazilian Central Bank standards and client business rules.
+                        </li>
+                        <li>Wrote unit and functional tests to keep production stable.</li>
+                    </ul>
+                    <div class="tags"><span>Golang</span><span>Java</span><span>Angular</span><span>Banking</span></div>
+                </li>
+            </ol>
+        </section>
+
+        <section id="skills" class="section container">
+            <h2 class="section-title"><span>03.</span> Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Backend</h3>
+                    <p>Golang, Java (Spring Boot), Python, TypeScript, Node.js, C++</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Frontend &amp; Mobile</h3>
+                    <p>Angular, ReactJS, React Native, Kivy</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Databases</h3>
+                    <p>PostgreSQL, MySQL, MongoDB, Redis, ElasticSearch / ELK</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Messaging &amp; APIs</h3>
+                    <p>Apache Kafka, RabbitMQ, REST, gRPC, GraphQL</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Cloud &amp; DevOps</h3>
+                    <p>AWS, Azure, Docker, Kubernetes, Terraform, GitHub Actions, Jenkins</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Testing</h3>
+                    <p>Jest, JUnit, Testify, Cypress, Postman, TDD</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Practices</h3>
+                    <p>Clean Architecture, Microservices, Platform Engineering, Scrum</p>
+                </div>
+                <div class="skill-card">
+                    <h3>AI</h3>
+                    <p>Explainable AI, Claude Code, Cursor, Antigravity, MCP, Prompt Engineering</p>
+                </div>
+            </div>
+
+            <div class="two-col">
+                <div>
+                    <h3 class="sub-title">Certifications</h3>
+                    <ul class="plain-list">
+                        <li>AWS Certified Cloud Practitioner</li>
+                        <li>AZ-900: Microsoft Azure Fundamentals</li>
+                        <li>Scrum Foundation Professional Certificate (SFPC)</li>
+                        <li>EF SET English Certificate 76/100 (C2 Proficient)</li>
+                        <li>Bootcamp GFT Start #3 Java</li>
+                        <li>Bootcamp GFT Quality Assurance #1</li>
+                        <li>Bootcamp Linux Experience</li>
+                        <li>Bootcamp Cyber 2022</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="sub-title">Languages</h3>
+                    <ul class="lang-list">
+                        <li><span>Portuguese</span><span class="level">Native</span></li>
+                        <li><span>English</span><span class="level">Full professional</span></li>
+                        <li><span>Spanish</span><span class="level">Professional working</span></li>
+                        <li><span>German</span><span class="level">Professional working</span></li>
+                        <li><span>French</span><span class="level">Professional working</span></li>
+                        <li><span>Russian</span><span class="level">Elementary</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section container">
+            <h2 class="section-title"><span>04.</span> Projects</h2>
+            <p class="section-lead">Latest public repositories from my GitHub.</p>
+            <div id="repo-grid" class="repo-grid">
+                <p class="muted">Loading repositories…</p>
+            </div>
+            <a class="btn btn-ghost" href="https://github.com/thalesmacedo1?tab=repositories" target="_blank"
+                rel="noopener">See all on GitHub</a>
+        </section>
+
+        <section id="education" class="section container">
+            <h2 class="section-title"><span>05.</span> Education</h2>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <p class="edu-date">2025 – 2026</p>
+                    <h3>Master's degree, Computer Science</h3>
+                    <p>Universidade Federal da Bahia</p>
+                </div>
+                <div class="edu-card">
+                    <p class="edu-date">2019 – 2021</p>
+                    <h3>Bachelor's degree, Science and Technology</h3>
+                    <p>Universidade Federal da Bahia</p>
+                </div>
+                <div class="edu-card">
+                    <p class="edu-date">2014 – 2017</p>
+                    <h3>Bachelor's degree, Humanities</h3>
+                    <p>Universidade Federal da Bahia</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section container contact">
+            <h2 class="section-title"><span>06.</span> Contact</h2>
+            <p class="section-lead">Open to new opportunities and conversations. The best way to reach me is by email or
+                LinkedIn.</p>
+            <div class="cta">
+                <a class="btn btn-primary" href="mailto:thalesmacedo1@live.com">thalesmacedo1@live.com</a>
+                <a class="btn btn-ghost" href="https://www.linkedin.com/in/thalesmacedo1/" target="_blank"
+                    rel="noopener">LinkedIn</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="social">
+            <a href="https://www.linkedin.com/in/thalesmacedo1/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <img src="src/icons/linkedin.svg" alt="">
+            </a>
+            <a href="https://github.com/thalesmacedo1" target="_blank" rel="noopener" aria-label="GitHub">
+                <img src="src/icons/github.svg" alt="">
+            </a>
+            <a href="https://www.instagram.com/thaleesmacedo/" target="_blank" rel="noopener" aria-label="Instagram">
+                <img src="src/icons/instagram.svg" alt="">
+            </a>
+            <a href="https://www.facebook.com/dev.thalesmacedo1/" target="_blank" rel="noopener" aria-label="Facebook">
+                <img src="src/icons/facebook.svg" alt="">
+            </a>
         </div>
+        <p><img src="src/icons/heart.svg" alt="" class="heart"> Made with love by Thales Macêdo · <span
+                id="year"></span></p>
     </footer>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
