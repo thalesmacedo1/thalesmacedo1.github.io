@@ -732,6 +732,56 @@ main,
     color: var(--accent-2);
 }
 
+/* research */
+.research-card {
+    position: relative;
+    max-width: 820px;
+    padding: 30px 32px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255, 198, 112, 0.35);
+    background: linear-gradient(160deg, rgba(255, 198, 112, 0.08), var(--surface) 55%);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    overflow: hidden;
+}
+
+.research-card::after {
+    content: "";
+    position: absolute;
+    right: -70px;
+    top: -70px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 1px dashed rgba(160, 176, 255, 0.25);
+    box-shadow: 0 0 0 40px rgba(143, 168, 255, 0.03);
+    pointer-events: none;
+}
+
+.research-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.research-meta .badge,
+.research-meta .edu-date {
+    margin: 0;
+}
+
+.research-card h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.research-card p {
+    color: var(--soft);
+    margin: 0 0 18px;
+}
+
 /* education */
 .edu-grid {
     display: grid;
