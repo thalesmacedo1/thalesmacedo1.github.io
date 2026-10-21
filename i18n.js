@@ -18,6 +18,7 @@ window.I18N = {
         "hero.location": "Salvador, Bahia, Brasil",
         "hero.cta": "Fale comigo",
         "hero.github": "Ver GitHub",
+        "cv.download": "Baixar CV",
         "hero.scroll": "Ir para Sobre",
 
         "about.title": "Sobre mim",
@@ -126,6 +127,7 @@ window.I18N = {
         "hero.location": "Salvador, Bahia, Brasilien",
         "hero.cta": "Kontakt aufnehmen",
         "hero.github": "GitHub ansehen",
+        "cv.download": "CV herunterladen",
         "hero.scroll": "Zu „Über mich“ scrollen",
 
         "about.title": "Über mich",
