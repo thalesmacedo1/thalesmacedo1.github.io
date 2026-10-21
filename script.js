@@ -136,15 +136,98 @@ document.querySelectorAll(".section").forEach((el) => {
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
+// translations: English is read from the page, other languages come from i18n.js
+const LANGS = ["en", "pt", "de"];
+const HTML_LANG = { en: "en", pt: "pt-BR", de: "de" };
+const metaDesc = document.querySelector('meta[name="description"]');
+let currentLang = "en";
+
+document.querySelectorAll("[data-i18n]").forEach((el) => (el.dataset.en = el.innerHTML));
+document.querySelectorAll("[data-i18n-aria]").forEach((el) => (el.dataset.enAria = el.getAttribute("aria-label")));
+metaDesc.dataset.en = metaDesc.content;
+
+function t(key) {
+    return I18N[currentLang]?.[key] ?? I18N.en[key] ?? key;
+}
+
+function setLang(lang) {
+    currentLang = LANGS.includes(lang) ? lang : "en";
+    const dict = I18N[currentLang] || {};
+    const english = currentLang === "en";
+
+    document.documentElement.lang = HTML_LANG[currentLang];
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+        el.innerHTML = english ? el.dataset.en : dict[el.dataset.i18n] ?? el.dataset.en;
+    });
+    document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+        el.setAttribute("aria-label", english ? el.dataset.enAria : dict[el.dataset.i18nAria] ?? el.dataset.enAria);
+    });
+    metaDesc.content = english ? metaDesc.dataset.en : dict["meta.desc"] ?? metaDesc.dataset.en;
+
+    document.querySelectorAll(".lang-switch button").forEach((b) =>
+        b.setAttribute("aria-pressed", b.dataset.lang === currentLang)
+    );
+
+    try {
+        localStorage.setItem("lang", currentLang);
+    } catch {}
+    const url = new URL(window.location.href);
+    url.searchParams.set("lang", currentLang);
+    history.replaceState(null, "", url);
+
+    renderRepos();
+}
+
+function initialLang() {
+    const fromUrl = new URLSearchParams(window.location.search).get("lang");
+    if (LANGS.includes(fromUrl)) return fromUrl;
+    try {
+        const saved = localStorage.getItem("lang");
+        if (LANGS.includes(saved)) return saved;
+    } catch {}
+    const browser = (navigator.language || "en").slice(0, 2).toLowerCase();
+    return LANGS.includes(browser) ? browser : "en";
+}
+
+document.querySelectorAll(".lang-switch button").forEach((b) =>
+    b.addEventListener("click", () => setLang(b.dataset.lang))
+);
+
 // load public repositories from GitHub
+let repoState = { status: "loading", repos: [] };
+
 function escapeHtml(str) {
     const div = document.createElement("div");
     div.textContent = str ?? "";
     return div.innerHTML;
 }
 
-async function loadRepos() {
+function renderRepos() {
     const grid = document.getElementById("repo-grid");
+    const { status, repos } = repoState;
+
+    if (status !== "ok" || !repos.length) {
+        const key = status === "loading" ? "repos.loading" : status === "error" ? "repos.error" : "repos.empty";
+        grid.innerHTML = `<p class="muted">${t(key)}</p>`;
+        return;
+    }
+
+    grid.innerHTML = repos
+        .map(
+            (r) => `
+        <a class="repo-card" href="${r.html_url}" target="_blank" rel="noopener">
+            <h3>${escapeHtml(r.name)}</h3>
+            <p>${r.description ? escapeHtml(r.description) : t("repos.nodesc")}</p>
+            <div class="repo-meta">
+                ${r.language ? `<span class="lang">${escapeHtml(r.language)}</span>` : ""}
+                <span>★ ${r.stargazers_count}</span>
+            </div>
+        </a>`
+        )
+        .join("");
+}
+
+async function loadRepos() {
     try {
         const res = await fetch(
             `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=30`
@@ -153,29 +236,12 @@ async function loadRepos() {
         const repos = (await res.json())
             .filter((r) => !r.fork && r.name !== `${GITHUB_USER}.github.io`)
             .slice(0, 6);
-
-        if (!repos.length) {
-            grid.innerHTML = '<p class="muted">No public repositories yet.</p>';
-            return;
-        }
-
-        grid.innerHTML = repos
-            .map(
-                (r) => `
-            <a class="repo-card" href="${r.html_url}" target="_blank" rel="noopener">
-                <h3>${escapeHtml(r.name)}</h3>
-                <p>${escapeHtml(r.description || "No description provided.")}</p>
-                <div class="repo-meta">
-                    ${r.language ? `<span class="lang">${escapeHtml(r.language)}</span>` : ""}
-                    <span>★ ${r.stargazers_count}</span>
-                </div>
-            </a>`
-            )
-            .join("");
+        repoState = { status: "ok", repos };
     } catch {
-        grid.innerHTML =
-            '<p class="muted">Couldn\'t load repositories right now. Check them out on GitHub.</p>';
+        repoState = { status: "error", repos: [] };
     }
+    renderRepos();
 }
 
+setLang(initialLang());
 loadRepos();
