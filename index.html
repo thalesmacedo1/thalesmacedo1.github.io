@@ -30,7 +30,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20261021">
 </head>
 
 <body>
@@ -49,6 +49,10 @@
                 <a href="#contact" data-i18n="nav.contact">Contact</a>
             </nav>
             <div class="lang-switch" role="group" aria-label="Language" data-i18n-aria="nav.language">
+                <svg class="globe" viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3z" />
+                </svg>
                 <button type="button" data-lang="en" lang="en" aria-pressed="true">EN</button>
                 <button type="button" data-lang="pt" lang="pt-BR" aria-pressed="false">PT</button>
                 <button type="button" data-lang="de" lang="de" aria-pressed="false">DE</button>
@@ -388,8 +392,8 @@
                 Macêdo</span> · <span id="year"></span></p>
     </footer>
 
-    <script src="i18n.js"></script>
-    <script src="script.js"></script>
+    <script src="i18n.js?v=20261021"></script>
+    <script src="script.js?v=20261021"></script>
 </body>
 
 </html>
