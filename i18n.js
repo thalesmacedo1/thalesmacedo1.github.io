@@ -1,13 +1,5 @@
-// Translations. English text lives in index.html and is read from the page at load,
-// so "en" here only holds strings that script.js renders itself.
+// Translations. English text lives in index.html and is read from the page at load.
 window.I18N = {
-    en: {
-        "repos.loading": "Loading repositories…",
-        "repos.nodesc": "No description provided.",
-        "repos.empty": "No public repositories yet.",
-        "repos.error": "Couldn't load repositories right now. Check them out on GitHub.",
-    },
-
     pt: {
         "meta.title": "Thales Macêdo | Engenheiro de Software",
         "meta.desc": "Thales Macêdo, Engenheiro de Software e Desenvolvedor Full Stack com Golang, Java, Python, Angular e AWS. Salvador, Bahia, Brasil.",
@@ -96,12 +88,14 @@ window.I18N = {
         "level.elementary": "Básico",
 
         "projects.title": "Projetos",
-        "projects.lead": "Repositórios públicos mais recentes do meu GitHub.",
+        "projects.lead": "Uma seleção de projetos do meu GitHub.",
+        "proj.xai": "Dataset sintético de triagem clínica (sinais vitais, sintomas, níveis ESI e desfechos) para treinar modelos de triagem e explicar suas decisões com SHAP.",
+        "proj.frete": "API de cotação de frete integrada à API da Frete Rápido, com persistência das cotações e endpoint de métricas. Construída com DDD e Clean Architecture e documentada com Swagger.",
+        "proj.encoder": "Microsserviço de encoding de vídeo que consome jobs do RabbitMQ, processa em paralelo com workers em Go e envia o resultado para cloud storage, com dead-letter queue para mensagens com falha.",
+        "proj.kafka": "Producer e consumer Kafka escritos em Go, com Docker Compose para rodar o broker localmente.",
+        "proj.terraform": "Infraestrutura como código que provisiona uma VPC na AWS e um cluster Kubernetes EKS com módulos Terraform reutilizáveis.",
+        "proj.bank": "API bancária em Go com migrações de schema no PostgreSQL e queries type-safe geradas com sqlc.",
         "projects.all": "Ver todos no GitHub",
-        "repos.loading": "Carregando repositórios…",
-        "repos.nodesc": "Sem descrição.",
-        "repos.empty": "Nenhum repositório público ainda.",
-        "repos.error": "Não foi possível carregar os repositórios agora. Veja todos no GitHub.",
 
         "edu.title": "Formação",
         "edu.masters": "Mestrado em Ciência da Computação",
@@ -202,12 +196,14 @@ window.I18N = {
         "level.elementary": "Grundkenntnisse",
 
         "projects.title": "Projekte",
-        "projects.lead": "Die neuesten öffentlichen Repositories auf meinem GitHub.",
+        "projects.lead": "Eine Auswahl von Projekten aus meinem GitHub.",
+        "proj.xai": "Synthetischer klinischer Triage-Datensatz (Vitalwerte, Symptome, ESI-Stufen und Outcomes), um Triage-Modelle zu trainieren und ihre Entscheidungen mit SHAP zu erklären.",
+        "proj.frete": "API für Frachtangebote mit Anbindung an die Frete-Rápido-API, Speicherung der Angebote und Metrik-Endpunkt. Umgesetzt mit DDD und Clean Architecture, dokumentiert mit Swagger.",
+        "proj.encoder": "Microservice zur Videokodierung, der Jobs aus RabbitMQ entgegennimmt, sie mit Go-Workern parallel verarbeitet und die Ergebnisse in Cloud Storage hochlädt, mit Dead-Letter-Queue für fehlgeschlagene Nachrichten.",
+        "proj.kafka": "Kafka-Producer und -Consumer in Go, mit Docker-Compose-Setup, um den Broker lokal zu betreiben.",
+        "proj.terraform": "Infrastructure as Code, die eine AWS-VPC und einen EKS-Kubernetes-Cluster mit wiederverwendbaren Terraform-Modulen bereitstellt.",
+        "proj.bank": "Banking-API in Go mit PostgreSQL-Schemamigrationen und typsicheren Queries, generiert mit sqlc.",
         "projects.all": "Alle auf GitHub ansehen",
-        "repos.loading": "Repositories werden geladen…",
-        "repos.nodesc": "Keine Beschreibung vorhanden.",
-        "repos.empty": "Noch keine öffentlichen Repositories.",
-        "repos.error": "Die Repositories konnten gerade nicht geladen werden. Alle Projekte finden Sie auf GitHub.",
 
         "edu.title": "Ausbildung",
         "edu.masters": "Master, Informatik",

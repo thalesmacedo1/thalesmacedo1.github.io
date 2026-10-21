@@ -691,16 +691,33 @@ main,
 
 .repo-meta {
     display: flex;
-    gap: 16px;
-    font-family: var(--font-mono);
-    font-size: 0.78rem;
-    color: var(--muted);
+    flex-wrap: wrap;
+    gap: 6px;
 }
 
-.repo-meta .lang::before {
-    content: "●";
-    color: var(--accent);
-    margin-right: 6px;
+.repo-meta span {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    color: #b9c6ff;
+}
+
+.repo-card.featured {
+    border-color: rgba(255, 198, 112, 0.35);
+    background: linear-gradient(160deg, rgba(255, 198, 112, 0.08), var(--surface) 55%);
+}
+
+.badge {
+    align-self: flex-start;
+    margin-bottom: 10px;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 999px;
+    background: rgba(255, 198, 112, 0.15);
+    color: var(--accent-2);
 }
 
 /* education */

@@ -271,9 +271,52 @@
 
         <section id="projects" class="section container">
             <h2 class="section-title"><span class="num">04.</span> <span data-i18n="projects.title">Projects</span></h2>
-            <p class="section-lead" data-i18n="projects.lead">Latest public repositories from my GitHub.</p>
-            <div id="repo-grid" class="repo-grid">
-                <p class="muted" data-i18n="repos.loading">Loading repositories…</p>
+            <p class="section-lead" data-i18n="projects.lead">A selection of projects from my GitHub.</p>
+            <div class="repo-grid">
+                <a class="repo-card featured" href="https://github.com/thalesmacedo1/iomt-xai-triage" target="_blank"
+                    rel="noopener">
+                    <span class="badge">Explainable AI</span>
+                    <h3>iomt-xai-triage</h3>
+                    <p data-i18n="proj.xai">Synthetic clinical triage dataset (vital signs, symptoms, ESI levels and
+                        outcomes) for training triage models and explaining their decisions with SHAP.</p>
+                    <div class="repo-meta"><span>Python</span><span>Machine Learning</span><span>SHAP</span></div>
+                </a>
+                <a class="repo-card" href="https://github.com/thalesmacedo1/freterapido-backend-api" target="_blank"
+                    rel="noopener">
+                    <h3>freterapido-backend-api</h3>
+                    <p data-i18n="proj.frete">Freight quote API integrated with the Frete Rápido carrier API, storing
+                        quotes and exposing a metrics endpoint. Built with DDD and Clean Architecture, documented with
+                        Swagger.</p>
+                    <div class="repo-meta"><span>Go</span><span>Gin</span><span>PostgreSQL</span><span>GORM</span><span>Swagger</span></div>
+                </a>
+                <a class="repo-card" href="https://github.com/thalesmacedo1/microservice-video-encoder" target="_blank"
+                    rel="noopener">
+                    <h3>microservice-video-encoder</h3>
+                    <p data-i18n="proj.encoder">Video encoding microservice that consumes jobs from RabbitMQ, processes
+                        them concurrently with Go workers and uploads the results to cloud storage, with a dead-letter
+                        queue for failed messages.</p>
+                    <div class="repo-meta"><span>Go</span><span>RabbitMQ</span><span>Docker</span><span>GCP</span></div>
+                </a>
+                <a class="repo-card" href="https://github.com/thalesmacedo1/go-apache-kafka" target="_blank"
+                    rel="noopener">
+                    <h3>go-apache-kafka</h3>
+                    <p data-i18n="proj.kafka">Kafka producer and consumer written in Go, with a Docker Compose setup to
+                        run the broker locally.</p>
+                    <div class="repo-meta"><span>Go</span><span>Apache Kafka</span><span>Docker</span></div>
+                </a>
+                <a class="repo-card" href="https://github.com/thalesmacedo1/terraform-aws-k8scluster" target="_blank"
+                    rel="noopener">
+                    <h3>terraform-aws-k8scluster</h3>
+                    <p data-i18n="proj.terraform">Infrastructure as code that provisions an AWS VPC and an EKS
+                        Kubernetes cluster using reusable Terraform modules.</p>
+                    <div class="repo-meta"><span>Terraform</span><span>AWS</span><span>EKS</span></div>
+                </a>
+                <a class="repo-card" href="https://github.com/thalesmacedo1/mcd-bank" target="_blank" rel="noopener">
+                    <h3>mcd-bank</h3>
+                    <p data-i18n="proj.bank">Banking API in Go with PostgreSQL schema migrations and type-safe queries
+                        generated with sqlc.</p>
+                    <div class="repo-meta"><span>Go</span><span>PostgreSQL</span><span>sqlc</span></div>
+                </a>
             </div>
             <a class="btn btn-ghost" href="https://github.com/thalesmacedo1?tab=repositories" target="_blank"
                 rel="noopener" data-i18n="projects.all">See all on GitHub</a>

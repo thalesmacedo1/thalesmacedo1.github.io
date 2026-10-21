@@ -1,4 +1,3 @@
-const GITHUB_USER = "thalesmacedo1";
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 // starfield background: twinkling stars, slight scroll parallax and the odd shooting star
@@ -146,9 +145,6 @@ document.querySelectorAll("[data-i18n]").forEach((el) => (el.dataset.en = el.inn
 document.querySelectorAll("[data-i18n-aria]").forEach((el) => (el.dataset.enAria = el.getAttribute("aria-label")));
 metaDesc.dataset.en = metaDesc.content;
 
-function t(key) {
-    return I18N[currentLang]?.[key] ?? I18N.en[key] ?? key;
-}
 
 function setLang(lang) {
     currentLang = LANGS.includes(lang) ? lang : "en";
@@ -174,8 +170,6 @@ function setLang(lang) {
     const url = new URL(window.location.href);
     url.searchParams.set("lang", currentLang);
     history.replaceState(null, "", url);
-
-    renderRepos();
 }
 
 function initialLang() {
@@ -193,55 +187,4 @@ document.querySelectorAll(".lang-switch button").forEach((b) =>
     b.addEventListener("click", () => setLang(b.dataset.lang))
 );
 
-// load public repositories from GitHub
-let repoState = { status: "loading", repos: [] };
-
-function escapeHtml(str) {
-    const div = document.createElement("div");
-    div.textContent = str ?? "";
-    return div.innerHTML;
-}
-
-function renderRepos() {
-    const grid = document.getElementById("repo-grid");
-    const { status, repos } = repoState;
-
-    if (status !== "ok" || !repos.length) {
-        const key = status === "loading" ? "repos.loading" : status === "error" ? "repos.error" : "repos.empty";
-        grid.innerHTML = `<p class="muted">${t(key)}</p>`;
-        return;
-    }
-
-    grid.innerHTML = repos
-        .map(
-            (r) => `
-        <a class="repo-card" href="${r.html_url}" target="_blank" rel="noopener">
-            <h3>${escapeHtml(r.name)}</h3>
-            <p>${r.description ? escapeHtml(r.description) : t("repos.nodesc")}</p>
-            <div class="repo-meta">
-                ${r.language ? `<span class="lang">${escapeHtml(r.language)}</span>` : ""}
-                <span>★ ${r.stargazers_count}</span>
-            </div>
-        </a>`
-        )
-        .join("");
-}
-
-async function loadRepos() {
-    try {
-        const res = await fetch(
-            `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=30`
-        );
-        if (!res.ok) throw new Error(res.status);
-        const repos = (await res.json())
-            .filter((r) => !r.fork && r.name !== `${GITHUB_USER}.github.io`)
-            .slice(0, 6);
-        repoState = { status: "ok", repos };
-    } catch {
-        repoState = { status: "error", repos: [] };
-    }
-    renderRepos();
-}
-
 setLang(initialLang());
-loadRepos();
